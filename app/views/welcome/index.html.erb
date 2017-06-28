@@ -1,0 +1,11 @@
+<div class="jumbotron">
+<h1> WELCOME TO ALUMINI PORTAL </h1>
+ <p>HI, <b><%= current_student.regno %></b> Enroll your details to the college. To be in touch with u more </p>
+ <%= link_to new_form_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-education"></i> Form
+<% end %>
+ <%= link_to staticpage_index_path, class: "btn btn-default" do %>
+    <i class="glyphicon glyphicon-ok"></i> Forum
+<% end %>
+</div>
+  <%= image_tag "sjit.jpg"%>

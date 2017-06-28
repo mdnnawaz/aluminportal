@@ -1,0 +1,113 @@
+
+<div class="container">   <div class = "col-md-4"></div> 
+<%= form_with(model: form, local: true) do |f| %>
+  <% if form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(form.errors.count, "error") %> prohibited this form from being saved:</h2>
+
+      <ul>
+      <% form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group form-buffe">
+  <div class="field">
+   <div class="col-sm-2">
+    <%= f.label :Current_Status %>
+   <%= f.select :current, options_for_select([[' Working '],['Government_official'],[' Higher Studies '],[ 'Entrepreneur'],
+   [' Other Field ']])  %>
+
+</div>
+  </div>
+</br>
+  <div class="field">
+   <div class="col-sm-4">
+    <%= f.label :Placed_on_campus%>
+    <%= f.check_box :is_placed %>
+    </div>
+  </div>
+  </br>
+</br>
+  <div class="field">
+    <%= f.label :company_name %>
+    <%= f.text_field :comname, placeholder: "Company Name",class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :company_address %>
+    <%= f.text_field :comaddr,placeholder: "Company Address",class: "form-control"   %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Designation %>
+    <%= f.text_field :desig,placeholder: "Designation",class: "form-control"   %>
+  </div>
+
+  <div class="field">
+    <%= f.label :experiennce_in_Company %>
+    <%= f.number_field :exp%>
+  </div>
+
+  <div class="field">
+    <%= f.label :abroad_study %>
+    <%= f.check_box :abroad, id: :form_abroad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :university %>
+    <%= f.text_field :univ,placeholder: "university",class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :course%>
+    <%= f.text_field :course, placeholder: "course",class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Company_name%>
+    <%= f.text_field :starcompany, placeholder: "Start-up Company",class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Address %>
+    <%= f.text_field :staraddr,placeholder: "Address", class: "form-control"  %>
+  </div>
+
+  <div class="field">     <%= f.label :Mode_of_communication%>     <%=
+f.select :commun ,options_for_select([[' Mobile
+'],['Email'],["Twiiter"]]) %>    </div>
+
+  <div class="field">
+    <%= f.label :mobile_number%>
+    <%= f.text_field :mobile,placeholder: "Mobile Number",class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Official_mail %>
+    <%= f.text_field :curmail,placeholder: "Official Mail",class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :linked_in_id %>
+    <%= f.text_field :linked_id,placeholder: "Linked_in Id", class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :areaofinterset %>
+    <%= f.text_field :areaofinterset,placeholder: "Area Of Interest", class: "form-control"  %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contribute_to_college%>
+    <%= f.text_field :contribute,placeholder: "Contribution", class: "form-control"  %>
+  </div>
+
+  <div class="actions">
+  
+    <%= f.submit "Finish",class: "btn btn-success" %>
+  </div>
+  </div>
+<% end %>
+</div>
